@@ -50,12 +50,12 @@ const App = () => {
     fetchAllLanguages();
   }, []);
 
-  const toggleDialog = (button) => {
+  const toggleDialog = (button: any) => {
     setIsDialogOpen(!isDialogOpen);
     setCurrentButton(button);
   };
 
-  const handleLanguageSelect = (lang) => {
+  const handleLanguageSelect = (lang: any) => {
     if (currentButton === 'source') {
       setButtonValue(lang.name);
       setTranslateFromCode(lang.code); 
