@@ -13,6 +13,11 @@ const App = () => {
   const [currentButton, setCurrentButton] = useState<null>(null);
   const [translateFromCode, setTranslateFromCode] = useState<string>('en');
   const [translateToCode, setTranslateToCode] = useState<string>('fr');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const filteredLanguages = (fetchedLanguages || []).filter((lang) =>
+  lang.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -94,6 +99,7 @@ const App = () => {
     speech.start();
   };
 
+
   return (
     <>
       <header className="bg-zinc-800 py-6 text-center text-white">
@@ -148,27 +154,49 @@ const App = () => {
             {buttonValue2}
           </button>
         </div>
-
         {isDialogOpen && (
-          <dialog open className="text-center border-4 w-80 h-screen overflow-y-scroll">
-            <ul className="w-full">
-              {Array.isArray(fetchedLanguages) && fetchedLanguages.length > 0 ? (
-                fetchedLanguages.map((lang, index) => (
-                  <li
-                    key={index}
-                    onClick={() => handleLanguageSelect(lang)}
-                    className="cursor-pointer"
-                  >
-                    {lang.name}
-                  </li>
-                ))
-              ) : (
-                <li>No languages found</li>
-              )}
-            </ul>
-          </dialog>
-        )}
+  <div
+    className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-50"
+    onClick={(e) => {
+      if (e.target === e.currentTarget) setIsDialogOpen(false);
+    }}
+  >
+    <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md max-h-[80vh] overflow-y-auto">
+      <h3 className="text-xl font-semibold mb-4 text-center">Select Language</h3>
+      
+      <input
+        type="text"
+        placeholder="Search language..."
+        className="w-full p-2 border border-gray-300 rounded mb-4"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
 
+      <ul className="divide-y divide-gray-300">
+        {filteredLanguages.length > 0 ? (
+          filteredLanguages.map((lang, index) => (
+            <li
+              key={index}
+              onClick={() => handleLanguageSelect(lang)}
+              className="py-2 px-4 hover:bg-gray-100 cursor-pointer"
+            >
+              {lang.name}
+            </li>
+          ))
+        ) : (
+          <li className="py-2 px-4 text-gray-500">No languages found</li>
+        )}
+      </ul>
+
+      <button
+        onClick={() => setIsDialogOpen(false)}
+        className="mt-4 w-full bg-zinc-800 text-white py-2 rounded hover:bg-zinc-700"
+      >
+        Close
+      </button>
+    </div>
+   </div>
+ )}
         <FaMicrophone
           onClick={speechRecog}
           className="speech-record-button shadow-2xl text-7xl text-center mx-auto bg-zinc-800 text-white p-3 rounded-full"
