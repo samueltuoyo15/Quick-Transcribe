@@ -14,7 +14,7 @@ const App = () => {
   const [translateFromCode, setTranslateFromCode] = useState<string>('en');
   const [translateToCode, setTranslateToCode] = useState<string>('fr');
 
-  const submitForm = async (e) => {
+  const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(input !== '') {
     setTranslateButtonValue('Translating........');
