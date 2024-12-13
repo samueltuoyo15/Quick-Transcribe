@@ -1,14 +1,14 @@
 # Translator-Web-App
-A Real Time Translator Web App built with Modern React Hooks and Vite as the Bundler
+A Real Time Translator Web App built with Next Js 🔥
 
 # Quick Transcribe
 
-This is a real time Translator Web Application made with React Js
+This is a real time Translator Web Application made with Next Js
 
 first Clone the Repository
 
 ```bash
-git clone <repo link>
+git clone https://github.com/samueltuoyo15/Language-Translator
 ```
 
 To run just navigate to the project root directory and type
