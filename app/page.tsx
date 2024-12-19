@@ -161,6 +161,7 @@ const App = () => {
       if (e.target === e.currentTarget) setIsDialogOpen(false);
     }}
   >
+    
     <div className="bg-white rounded-lg shadow-lg p-4 w-full max-w-md max-h-[80vh] overflow-y-auto">
       <h3 className="text-xl font-semibold mb-4 text-center">Select Language</h3>
       
@@ -184,10 +185,11 @@ const App = () => {
             </li>
           ))
         ) : (
-          <li className="py-2 px-4 text-gray-500">No languages found</li>
+          <li className="py-2 px-4 text-gray-500">No language found</li>
         )}
       </ul>
 
+      
       <button
         onClick={() => setIsDialogOpen(false)}
         className="mt-4 w-full bg-zinc-800 text-white py-2 rounded hover:bg-zinc-700"
