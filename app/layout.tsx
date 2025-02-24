@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Transcribe Me by Samuel Tuoyo",
+  title: "Quick Transcribe by Samuel Tuoyo",
   description: "Translator Website Built using nextjs",
 };
 

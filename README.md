@@ -1,65 +1,77 @@
-# Transcribe Me
+# Quick Transcribe
 
-A simple and intuitive translation website built with Next.js, allowing users to easily translate text between different languages.
+A simple and fast translation web application built with Next.js, allowing users to easily translate text between different languages.
 
 ## Description
 
-Transcribe Me provides a seamless experience for translating text between various languages.  It leverages the `mymemory.translated.net` API for translations and features a user-friendly interface for selecting languages and viewing results.
+Quick Transcribe provides a user-friendly interface for translating text.  It fetches available languages and lets users select source and target languages. The application leverages the mymemory.translated.net API for translations.
 
 ## Installation
 
-Follow these steps to get the project up and running on your local machine:
+To get started with Quick Transcribe, follow these steps:
 
-1.  **Clone the repository:**
+1.  Clone the repository:
 
     ```bash
     git clone <repository_url>
+    ```
+
+2.  Navigate to the project directory:
+
+    ```bash
     cd translator
     ```
 
-2.  **Install dependencies:**
+3.  Install the dependencies:
 
     ```bash
-    npm install  # or yarn install or pnpm install
+    npm install
     ```
 
 ## Usage
 
-1.  **Start the development server:**
+1.  Run the development server:
 
     ```bash
-    npm run dev  # or yarn dev or pnpm dev
+    npm run dev
     ```
 
-2.  **Open your browser and navigate to `http://localhost:3000`** (or the port your development server is running on).
+2.  Open your browser and navigate to `http://localhost:3000` (or the port shown in your terminal).
 
-3.  **Enter the text you want to translate** in the input field.
+3.  Enter the text you want to translate in the input field.
 
-4.  **Select the source language** from the first language dropdown.
+4.  Select the source language by clicking on the first language button. A dialog will appear, allowing you to search and select your desired language.
 
-5.  **Select the target language** from the second language dropdown.
+5.  Select the target language by clicking on the second language button.
 
-6.  **Click the "Translate" button** to see the translated text.
+6.  Click the "Translate" button to see the translated text.
 
-## Contributing
+7. You can use the microphone feature to translate voice to text.
 
-Contributions are welcome! Here's how you can contribute to the project:
+## Contribution Guidelines
 
-1.  **Fork the repository.**
-2.  **Create a new branch** for your feature or bug fix:
+Contributions are welcome! If you'd like to contribute to Quick Transcribe, please follow these guidelines:
+
+1.  Fork the repository.
+
+2.  Create a new branch for your feature or bug fix:
 
     ```bash
     git checkout -b feature/your-feature-name
     ```
 
-3.  **Make your changes** and commit them with descriptive commit messages.
-4.  **Push your branch** to your forked repository.
-5.  **Create a pull request** from your branch to the main branch of the original repository.
+3.  Make your changes and commit them with descriptive messages.
 
-Please ensure your code adheres to the project's coding standards and includes appropriate tests.
+4.  Push your changes to your fork:
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+5.  Submit a pull request to the main branch of the original repository.
 
 ## License
 
-This project does not currently have a license. All rights are reserved by the author.
+This project is open source. (Specify the license here if applicable, e.g., MIT License).
 
 [![Built with Dokugen](https://img.shields.io/badge/Built%20with-Dokugen-brightgreen)](https://github.com/samueltuoyo15/Dokugen)
